@@ -526,6 +526,197 @@
             line-height: 1.7;
         }
 
+        /* Feature Section */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 45px 40px;
+            transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(212, 175, 55, 0.35);
+            box-shadow: 0 28px 70px rgba(212, 175, 55, 0.12);
+        }
+
+        .feature-title {
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .feature-desc {
+            font-size: 1rem;
+            color: var(--text-gray);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .feature-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .feature-list li {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            color: var(--accent-gold);
+            font-weight: 700;
+            margin-top: 2px;
+        }
+
+        .feature-note {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 18px;
+        }
+
+        /* Reservation Section */
+        .reservation-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 360px;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .reservation-info {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .reservation-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 28px 32px;
+        }
+
+        .reservation-card h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .reservation-card p {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        .calendar-card {
+            background: #ffffff;
+            color: #1b1b1b;
+            border-radius: 18px;
+            padding: 28px;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+            position: sticky;
+            top: 120px;
+        }
+
+        .calendar-card h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+
+        .calendar-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 18px;
+        }
+
+        .calendar-month {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .calendar-nav {
+            display: flex;
+            gap: 10px;
+        }
+
+        .calendar-nav button {
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            border: 1px solid #e5e7eb;
+            background: #ffffff;
+            cursor: pointer;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+        }
+
+        .calendar-day {
+            font-size: 0.8rem;
+            color: #9ca3af;
+            text-align: center;
+            padding: 6px 0;
+            font-weight: 600;
+        }
+
+        .calendar-date {
+            border-radius: 10px;
+            border: 1px solid #e5e7eb;
+            height: 46px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #1f2937;
+            background: #ffffff;
+        }
+
+        .calendar-date.muted {
+            color: #cbd5f5;
+            border-color: #f1f5f9;
+        }
+
+        .calendar-date.today {
+            border-color: #2563eb;
+            color: #2563eb;
+            font-weight: 700;
+        }
+
+        .calendar-date.weekend {
+            background: #f8fafc;
+            color: #1d4ed8;
+        }
+
+        @media (max-width: 1024px) {
+            .reservation-layout {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .calendar-card {
+                position: static;
+                top: auto;
+            }
+        }
+
         /* Curriculum Section */
         .curriculum-list {
             display: flex;
@@ -1062,6 +1253,130 @@
                     <div class="curriculum-content">
                         <h4>월 1,000만원 자동화 시스템</h4>
                         <p>재주문, CS, 재고관리까지 자동화하는 운영 시스템 구축</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Section -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Service Highlights</div>
+                <h2 class="section-title">서비스 핵심 기능</h2>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card reveal reveal-delay-1">
+                    <h3 class="feature-title">반경 5km 특가 매칭</h3>
+                    <p class="feature-desc">
+                        주변 호텔, 펜션, 모텔의 특가 정보를 실시간으로 매칭하여
+                        즉시 예약 가능한 옵션을 제공합니다.
+                    </p>
+                    <ul class="feature-list">
+                        <li>거리 설정 기능으로 검색 반경을 유연하게 조절</li>
+                        <li>알림 기능 활성 시 특가 요약 알림 제공</li>
+                        <li>알림 비활성 시 매칭 내용을 톡으로 자동 발송</li>
+                        <li>예약 장소별 상세 항목 및 특전 정보 제공</li>
+                    </ul>
+                </div>
+                <div class="feature-card reveal reveal-delay-2">
+                    <h3 class="feature-title">간편 로그인 시스템</h3>
+                    <p class="feature-desc">
+                        사용자는 선택한 SNS 계정으로 빠르게 로그인하고
+                        필요한 정보만 안전하게 수집합니다.
+                    </p>
+                    <ul class="feature-list">
+                        <li>구글, 네이버, 카카오 로그인 지원</li>
+                        <li>이름 · 전화번호 · 이메일만 최소 수집</li>
+                        <li>회원 정보 기반 맞춤 추천 환경 제공</li>
+                    </ul>
+                </div>
+                <div class="feature-card reveal reveal-delay-3">
+                    <h3 class="feature-title">회원 활동 데이터 분석</h3>
+                    <p class="feature-desc">
+                        회원의 활동 분야를 크롤링하여 맞춤 매칭 정확도를
+                        높이고, 장기적으로 머신러닝에 활용합니다.
+                    </p>
+                    <ul class="feature-list">
+                        <li>네이버 지도 활동 데이터 크롤링 검토</li>
+                        <li>앱 사용 현황 크롤링으로 실시간 관심사 축적</li>
+                        <li>수집 데이터 기반 분야별 머신러닝 배치 적용</li>
+                        <li>폰 설정 내 푸쉬 차단 앱 확인 후 매칭 제외</li>
+                    </ul>
+                    <p class="feature-note">※ 크롤링 항목은 기술적·법적 가능성 검토 후 적용합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Reservation Status</div>
+                <h2 class="section-title">예약 현황</h2>
+            </div>
+            <div class="reservation-layout">
+                <div class="reservation-info">
+                    <div class="reservation-card reveal reveal-delay-1">
+                        <h4>실시간 매칭 요약</h4>
+                        <p>특가 숙소 매칭 결과와 알림 내역을 한눈에 확인할 수 있습니다.</p>
+                    </div>
+                    <div class="reservation-card reveal reveal-delay-2">
+                        <h4>상세 예약 히스토리</h4>
+                        <p>최근 예약 요청, 확정 내역, 취소 상태를 정리해서 제공합니다.</p>
+                    </div>
+                    <div class="reservation-card reveal reveal-delay-3">
+                        <h4>맞춤 추천 일정</h4>
+                        <p>회원 데이터 기반으로 선호 일정과 숙소를 빠르게 안내합니다.</p>
+                    </div>
+                </div>
+                <div class="calendar-card reveal reveal-delay-4">
+                    <h4>예약 현황</h4>
+                    <div class="calendar-header">
+                        <div class="calendar-month">2026년 2월</div>
+                        <div class="calendar-nav">
+                            <button aria-label="이전 달">‹</button>
+                            <button aria-label="다음 달">›</button>
+                        </div>
+                    </div>
+                    <div class="calendar-grid">
+                        <div class="calendar-day">일</div>
+                        <div class="calendar-day">월</div>
+                        <div class="calendar-day">화</div>
+                        <div class="calendar-day">수</div>
+                        <div class="calendar-day">목</div>
+                        <div class="calendar-day">금</div>
+                        <div class="calendar-day">토</div>
+                        <div class="calendar-date muted">1</div>
+                        <div class="calendar-date muted">2</div>
+                        <div class="calendar-date today">3</div>
+                        <div class="calendar-date">4</div>
+                        <div class="calendar-date">5</div>
+                        <div class="calendar-date">6</div>
+                        <div class="calendar-date weekend">7</div>
+                        <div class="calendar-date weekend">8</div>
+                        <div class="calendar-date">9</div>
+                        <div class="calendar-date">10</div>
+                        <div class="calendar-date">11</div>
+                        <div class="calendar-date">12</div>
+                        <div class="calendar-date">13</div>
+                        <div class="calendar-date weekend">14</div>
+                        <div class="calendar-date weekend">15</div>
+                        <div class="calendar-date">16</div>
+                        <div class="calendar-date">17</div>
+                        <div class="calendar-date">18</div>
+                        <div class="calendar-date">19</div>
+                        <div class="calendar-date">20</div>
+                        <div class="calendar-date weekend">21</div>
+                        <div class="calendar-date weekend">22</div>
+                        <div class="calendar-date">23</div>
+                        <div class="calendar-date">24</div>
+                        <div class="calendar-date">25</div>
+                        <div class="calendar-date">26</div>
+                        <div class="calendar-date">27</div>
+                        <div class="calendar-date weekend">28</div>
                     </div>
                 </div>
             </div>

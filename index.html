@@ -526,6 +526,69 @@
             line-height: 1.7;
         }
 
+        /* Feature Section */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 45px 40px;
+            transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(212, 175, 55, 0.35);
+            box-shadow: 0 28px 70px rgba(212, 175, 55, 0.12);
+        }
+
+        .feature-title {
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .feature-desc {
+            font-size: 1rem;
+            color: var(--text-gray);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .feature-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .feature-list li {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            color: var(--accent-gold);
+            font-weight: 700;
+            margin-top: 2px;
+        }
+
+        .feature-note {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 18px;
+        }
+
         /* Curriculum Section */
         .curriculum-list {
             display: flex;
@@ -1063,6 +1126,57 @@
                         <h4>월 1,000만원 자동화 시스템</h4>
                         <p>재주문, CS, 재고관리까지 자동화하는 운영 시스템 구축</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Section -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Service Highlights</div>
+                <h2 class="section-title">서비스 핵심 기능</h2>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card reveal reveal-delay-1">
+                    <h3 class="feature-title">반경 5km 특가 매칭</h3>
+                    <p class="feature-desc">
+                        주변 호텔, 펜션, 모텔의 특가 정보를 실시간으로 매칭하여
+                        즉시 예약 가능한 옵션을 제공합니다.
+                    </p>
+                    <ul class="feature-list">
+                        <li>거리 설정 기능으로 검색 반경을 유연하게 조절</li>
+                        <li>알림 기능 활성 시 특가 요약 알림 제공</li>
+                        <li>알림 비활성 시 매칭 내용을 톡으로 자동 발송</li>
+                        <li>예약 장소별 상세 항목 및 특전 정보 제공</li>
+                    </ul>
+                </div>
+                <div class="feature-card reveal reveal-delay-2">
+                    <h3 class="feature-title">간편 로그인 시스템</h3>
+                    <p class="feature-desc">
+                        사용자는 선택한 SNS 계정으로 빠르게 로그인하고
+                        필요한 정보만 안전하게 수집합니다.
+                    </p>
+                    <ul class="feature-list">
+                        <li>구글, 네이버, 카카오 로그인 지원</li>
+                        <li>이름 · 전화번호 · 이메일만 최소 수집</li>
+                        <li>회원 정보 기반 맞춤 추천 환경 제공</li>
+                    </ul>
+                </div>
+                <div class="feature-card reveal reveal-delay-3">
+                    <h3 class="feature-title">회원 활동 데이터 분석</h3>
+                    <p class="feature-desc">
+                        회원의 활동 분야를 크롤링하여 맞춤 매칭 정확도를
+                        높이고, 장기적으로 머신러닝에 활용합니다.
+                    </p>
+                    <ul class="feature-list">
+                        <li>네이버 지도 활동 데이터 크롤링 검토</li>
+                        <li>앱 사용 현황 크롤링으로 실시간 관심사 축적</li>
+                        <li>수집 데이터 기반 분야별 머신러닝 배치 적용</li>
+                        <li>폰 설정 내 푸쉬 차단 앱 확인 후 매칭 제외</li>
+                    </ul>
+                    <p class="feature-note">※ 크롤링 항목은 기술적·법적 가능성 검토 후 적용합니다.</p>
                 </div>
             </div>
         </div>
